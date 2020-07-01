@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+* {
+  z-index: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+button {
+  border-radius: 29px;
+  border: none;
+  font-size: small;
+  font-weight: 500;
+  height: 40px;
+  width: 190px;
+  color: #165CDC;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn {}
+
+.background {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+.stack-top {
+  z-index: 0;
+}
+
+.header {
+  border: 1px solid red;
+  height: 85vh;
+  width: 100vw;
+  position: relative;
+}
+
+@media only screen and (max-width: 900px) {
+  .header {
+    background-color: rgba(91, 174, 250, 0.5);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-section {
+  width: 100vw;
+  height: 100px;
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+}
+
+.logo {
+  flex: 2;
+  border: 1px solid yellow;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav {
+  flex: 5;
+  position: relative;
+  border: 1px solid red;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-button {
+  flex: 2;
+  padding: 5px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav>a {
+  text-decoration: none;
+  text-emphasis: none;
+  color: #F1F5FD;
+  font-family: 'Montserrat', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section-0 {
+  position: relative;
+  border: 1px solid yellow;
+  height: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-0>div {
+  border: 1px solid red;
+  width: 40%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-0-1 {
+  margin: 10px;
+  padding: 10px;
+}
+
+.section-0-1 h1, p {
+  color: #ffffff;
+}
+
+.section-0-1 h1 {
+  font-weight: 800;
+}
+
+.section-0-1 p {
+  font-size: small;
 }
