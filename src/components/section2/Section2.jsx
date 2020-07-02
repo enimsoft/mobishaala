@@ -8,7 +8,7 @@ const Section2 = () => {
             {/* forget the below div existed in the document (svg background)*/}
             <div class=".background-container">
                 <img src={background} class="background" />
-            </div>¸
+            </div>
             <div class="content">
                 <h1>Our Success Stories</h1>
                 <SuccessStories />
