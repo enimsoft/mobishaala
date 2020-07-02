@@ -198,7 +198,7 @@ button {
   width: 100vw;
 }
 
-.content {
+.content, .content2 {
   top: 16%;
   display: flex;
   flex-flow: column nowrap;
@@ -257,16 +257,22 @@ button {
   /* border: 1px solid red; */
 }
 
-.section4 .content {
-  top: 80px;
+.content2 {
+  position: absolute;
+  top: 30%;
 }
 
-.section-4 .content h1 {
+.content2 * {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.section-4 .content2 h1 {
   color: #ffffff;
   margin-bottom: 0px;
 }
 
-.section-4 .content p {
+.section-4 .content2 p {
   color: #ffffff;
   font-size: small;
   margin-top: 0px;

@@ -9,7 +9,7 @@ const Section4 = () => {
             <div class=".background-container">
                 <img src={background} class="background" alt="background"/>
             </div>
-            <div class="content">
+            <div class="content2">
                 <h1>Get Your Risk Free Audit Today</h1>
                 <p>UNCOVER THE SECRETS TO OUTRANK YOUR COMPETITORS</p>
                 <button>Get Your Free Audit</button>
