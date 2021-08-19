@@ -6,31 +6,34 @@ name: Deploy
 on:
   workflow_dispatch:
   push:
-    branches: [master, gh-pages-src]
+    branches: [ master, gh-pages-src ]
   pull_request:
-    branches: [master]
+    branches: [ master ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: CI=false npm ci
-      - run: npm run build
-      - name: Commit and Push 'Out' Directory
-        run: |
-          git add .
-          git config --global user.name 'pranavdhoolia'
-          git config --global user.email 'dhoolia.pranav@gmail.com'
-          git commit -m "Automated Build"
-          git push
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: CI=false npm ci 
+    - run: npm run build
+      
+    - name: Insert .nojekyll in out dir
+      run: |
+        cd out
+        touch .nojekyll
+        cd ..
+        
+    - name: Commit and Push 'Out' Directory
+      run: |
+        git add .
+        git config --global user.name 'pd-escher'
+        git config --global user.email 'dhoolia.pranav@gmail.com'
+        git commit -m "Automated Build"
+        git push origin `git subtree split --prefix out gh-pages-src`:gh-pages --force
