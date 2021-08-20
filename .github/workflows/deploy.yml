@@ -33,7 +33,7 @@ jobs:
     - name: Commit and Push 'Out' Directory
       run: |
         git add .
-        git config --global user.name 'pd-escher'
+        git config --global user.name 'pranavdhoolia'
         git config --global user.email 'dhoolia.pranav@gmail.com'
         git commit -m "Automated Build"
-        git push origin `git subtree split --prefix out gh-pages-src`:gh-pages --force
+        git push origin `git subtree split --prefix build gh-pages-src`:gh-pages --force
